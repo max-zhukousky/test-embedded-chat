@@ -7,6 +7,12 @@
 			window.addEventListener("onEmbeddedMessagingReady", e => {
 			  console.log('EMBEDDED MESSAGING READY');
 			});
+			window.onload = function() {
+			   initEmbeddedMessaging();
+			}
+			window.addEventListener("onload", e => {
+			  console.log('EMBEDDED MESSAGING READY 2');
+			})
 			function initEmbeddedMessaging() {
 				try {
 					console.log('TEST');
