@@ -1,24 +1,27 @@
 <html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	</head>
 	<body>
 		<script type='text/javascript'>
-	function initEmbeddedMessaging() {
-		try {
-			embeddedservice_bootstrap.settings.language = 'nl_NL'; // For example, enter 'en' or 'en-US'
-
-			embeddedservice_bootstrap.init(
-				'00DAa00000OpgRc',
-				'Antwoordservice',
-				'https://bizziphone--partial.sandbox.my.site.com/ESWAntwoordservice1772196398170',
-				{
-					scrt2URL: 'https://bizziphone--partial.sandbox.my.salesforce-scrt.com'
+			function initEmbeddedMessaging() {
+				try {
+					embeddedservice_bootstrap.settings.language = 'nl_NL'; // For example, enter 'en' or 'en-US'
+		
+					embeddedservice_bootstrap.init(
+						'00DAa00000OpgRc',
+						'Antwoordservice',
+						'https://bizziphone--partial.sandbox.my.site.com/ESWAntwoordservice1772196398170',
+						{
+							scrt2URL: 'https://bizziphone--partial.sandbox.my.salesforce-scrt.com'
+						}
+					);
+				} catch (err) {
+					console.error('Error loading Embedded Messaging: ', err);
 				}
-			);
-		} catch (err) {
-			console.error('Error loading Embedded Messaging: ', err);
-		}
-	};
-</script>
-<script type='text/javascript' src='https://bizziphone--partial.sandbox.my.site.com/ESWAntwoordservice1772196398170/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+			};
+		</script>
+		<script type='text/javascript' src='https://bizziphone--partial.sandbox.my.site.com/ESWAntwoordservice1772196398170/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 	</body>
 </html>
 
