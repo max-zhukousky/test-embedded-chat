@@ -35,6 +35,16 @@ script.onerror = function() {
 };
 
 document.body.appendChild(script);
+
+			window.addEventListener("onEmbeddedMessagingReady", e => {
+            //log event
+            console.log("onEmbeddedMessagingReady event triggered");
+          
+            //Set invisible prechat field
+            embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+                "Initial_Web_Page_URL" : window.location.href
+            });
+        });
 </script>
 	</body>
 </html>
