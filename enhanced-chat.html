@@ -3,28 +3,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 	</head>
 	<body>
-		<script type='text/javascript'>
-			console.log('NOT INITIALIZED');
-	function initEmbeddedMessaging() {
-		try {
-			console.log('INITIALIZED');
-			embeddedservice_bootstrap.settings.language = 'nl_NL'; // For example, enter 'en' or 'en-US'
+		<script>
+console.log('NOT INITIALIZED');
 
-			embeddedservice_bootstrap.init(
-				'00DAa00000OpgRc',
-				'Web_Chat_External',
-				'https://bizziphone--partial.sandbox.my.site.com/ESWWebChatExternal1773254253375',
-				{
-					scrt2URL: 'https://bizziphone--partial.sandbox.my.salesforce-scrt.com'
-				}
-			);
-		} catch (err) {
-			console.error('Error loading Embedded Messaging: ', err);
-		}
-	};
+function initEmbeddedMessaging() {
+    console.log('INITIALIZED');
+}
+
+const script = document.createElement('script');
+script.src = "https://bizziphone--partial.sandbox.my.site.com/ESWWebChatExternal1773254253375/assets/js/bootstrap.min.js";
+
+script.onload = function() {
+    initEmbeddedMessaging();
+};
+
+script.onerror = function() {
+    console.error("Bootstrap script failed to load");
+};
+
+document.body.appendChild(script);
 </script>
-<script type='text/javascript' src='https://bizziphone--partial.sandbox.my.site.com/ESWWebChatExternal1773254253375/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-
 	</body>
 </html>
 
