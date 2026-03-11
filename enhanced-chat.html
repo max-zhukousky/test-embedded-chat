@@ -4,8 +4,10 @@
 	</head>
 	<body>
 		<script type='text/javascript'>
+			console.log('NOT INITIALIZED');
 	function initEmbeddedMessaging() {
 		try {
+			console.log('INITIALIZED');
 			embeddedservice_bootstrap.settings.language = 'nl_NL'; // For example, enter 'en' or 'en-US'
 
 			embeddedservice_bootstrap.init(
