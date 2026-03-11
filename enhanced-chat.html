@@ -7,8 +7,21 @@
 console.log('NOT INITIALIZED');
 
 function initEmbeddedMessaging() {
-    console.log('INITIALIZED');
-}
+		try {
+			embeddedservice_bootstrap.settings.language = 'nl_NL'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DAa00000OpgRc',
+				'Web_Chat_External',
+				'https://bizziphone--partial.sandbox.my.site.com/ESWWebChatExternal1773254253375',
+				{
+					scrt2URL: 'https://bizziphone--partial.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
 
 const script = document.createElement('script');
 script.src = "https://bizziphone--partial.sandbox.my.site.com/ESWWebChatExternal1773254253375/assets/js/bootstrap.min.js";
